@@ -187,3 +187,119 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: rgba(217, 119, 6, 0.5); /* Color al pasar ratón */
 }
+
+/* ===== OPTIMIZACIONES PARA DISPOSITIVOS MÓVILES =====
+   Mejora el rendimiento y la experiencia en pantallas pequeñas
+   ===== */
+
+/* Reducir animaciones en dispositivos con preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Optimizaciones para pantallas muy pequeñas (< 640px) */
+@media (max-width: 640px) {
+	/* Reducir padding en secciones */
+	section {
+		@apply py-12;
+	}
+
+	/* Optimizar espaciado de contenedores */
+	.max-w-6xl,
+	.max-w-5xl,
+	.max-w-4xl {
+		@apply px-4;
+	}
+
+	/* Reducir tamaño de bordes redondeados */
+	.rounded-2xl {
+		@apply rounded-xl;
+	}
+
+	/* Optimizar sombras para móvil */
+	.shadow-2xl,
+	.shadow-lg {
+		@apply shadow;
+	}
+
+	/* Ajustar botones para mejor usabilidad móvil */
+	.button-primary,
+	.button-secondary {
+		@apply text-sm px-4 py-2 min-h-[44px];
+	}
+
+	/* Asegurar que los elementos interactive tengan buen tamaño para tocar */
+	button,
+	a[class*="button"],
+	.card-hover {
+		min-height: 44px;
+		min-width: 44px;
+	}
+
+	/* Reducir blur en glass effect para mejor rendimiento */
+	.glass-effect {
+		@apply backdrop-blur-md;
+	}
+
+	/* Optimizar animación de marquee para móvil */
+	.animate-marquee {
+		animation: marquee 10s linear infinite;
+	}
+}
+
+/* Optimizaciones para tablets pequeñas (640px - 768px) */
+@media (min-width: 640px) and (max-width: 768px) {
+	section {
+		@apply py-16;
+	}
+
+	.rounded-2xl {
+		@apply rounded-2xl;
+	}
+}
+
+/* Optimizaciones para pantallas landscape en móvil */
+@media (max-height: 600px) and (orientation: landscape) {
+	/* Reducir padding vertical para mejor uso de espacio */
+	section {
+		@apply py-8;
+	}
+
+	/* Hacer nav más compacto */
+	nav {
+		@apply py-2;
+	}
+
+	/* Reducir gap en elementos */
+	.gap-6 {
+		@apply gap-3;
+	}
+
+	.gap-12 {
+		@apply gap-6;
+	}
+}
+
+/* Mejoras de accesibilidad y rendimiento */
+@media (prefers-color-scheme: dark) {
+	/* Optimizar contraste en modo oscuro */
+	body {
+		color-scheme: dark;
+	}
+}
+
+/* Detectar alto contraste requerido */
+@media (prefers-contrast: more) {
+	/* Aumentar opacidad en elementos semitransparentes */
+	.glass-effect {
+		@apply bg-white/20;
+	}
+
+	.glow-effect {
+		@apply shadow-[0_0_50px_rgba(217,119,6,0.4)];
+	}
+}

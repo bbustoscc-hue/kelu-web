@@ -1,22 +1,22 @@
 ---
 ---
 
-<section id="gallery" class="py-32 relative overflow-hidden">
+<section id="gallery" class="py-16 sm:py-24 md:py-32 relative overflow-hidden">
 	<div class="absolute inset-0">
-		<div class="absolute top-1/4 right-0 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+		<div class="absolute top-1/4 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 	</div>
 
 	<div class="max-w-6xl mx-auto px-4 relative z-10">
-		<div class="text-center mb-16">
-			<h2 class="text-5xl md:text-6xl font-black mb-6 gradient-text">
+		<div class="text-center mb-12 sm:mb-16">
+			<h2 class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 sm:mb-6 gradient-text">
 				Galería
 			</h2>
-			<p class="text-amber-200 text-lg max-w-2xl mx-auto">
+			<p class="text-amber-200 text-base sm:text-lg max-w-2xl mx-auto">
 				Momentos memorables de nuestros shows y eventos
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 			{[1, 2, 3, 4, 5, 6].map((i) => (
 				<div class="group relative overflow-hidden rounded-2xl aspect-square bg-gradient-to-br from-amber-50 to-orange-100 cursor-pointer card-hover">
 					<div class="absolute inset-0 bg-gradient-to-br from-slate-700 to-orange-100 flex items-center justify-center">
