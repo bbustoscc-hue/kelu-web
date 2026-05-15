@@ -1,19 +1,30 @@
 ---
+/* ===== LAYOUT BASE DEL PROYECTO =====
+   Este es el layout principal que se usa en todas las páginas.
+   Aquí se importan los estilos globales y se define la estructura HTML base.
+   ===== */
+
 import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
 <html lang="es">
+	<!-- ===== HEAD (Metadatos de la página) ===== -->
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>KELU - Reggae Band</title>
-		<meta name="description" content="KELU - La mejor banda de reggae" />
+
+		<!-- MODIFICA: Cambiar título y descripción para SEO -->
+		<title>KELU</title>
+		<meta name="description" content="KELU" />
 	</head>
-	<body class="bg-gradient-to-b from-slate-900 to-black text-white">
+
+	<!-- ===== BODY (Contenido de la página) ===== -->
+	<body class="text-white">
+		<!-- slot: Aquí se inyecta el contenido de cada página -->
 		<slot />
 	</body>
 </html>

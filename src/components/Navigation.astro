@@ -1,82 +1,108 @@
 ---
+/* ===== COMPONENTE: NAVEGACIÓN =====
+   Menú superior fijo que siempre está visible.
+
+   CARACTERÍSTICAS:
+   - Fixed top: Se queda arriba al hacer scroll
+   - Z-50: Siempre encima de otros elementos
+   - Responsive: Menú hamburguesa en móvil
+   - Links ancla: Navega a cada sección (#about, #gallery, etc)
+
+   MODIFICA:
+   - Cambiar "KELU" por otro nombre
+   - Agregar/quitar links en la <ul>
+   - Cambiar href="#section" para otras secciones
+   ===== */
 ---
 
-<nav class="fixed top-0 w-full bg-black/40 backdrop-blur-xl z-50 border-b border-emerald-500/20">
+<nav class="fixed top-0 w-full bg-amber-950/60 backdrop-blur-xl z-50 border-b border-amber-700/30">
+	<!-- Contenedor principal del nav -->
 	<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-		<div class="text-2xl font-black gradient-text hover:scale-110 transition-transform">
+		<!-- Logo/Nombre de la banda -->
+		<div class="text-2xl font-black gradient-text hover:scale-110 transition-transform cursor-pointer">
 			KELU
 		</div>
+
+		<!-- Menú desktop (visible solo en pantallas medianas+) -->
 		<ul class="hidden md:flex gap-8 text-sm md:text-base">
+			<!-- Cada link navega a una sección usando # (anchor links) -->
 			<li>
-				<a href="#about" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+				<a href="#about" class="text-amber-100 hover:text-amber-200 transition duration-300 relative group">
 					Nosotros
-					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+					<!-- Línea que aparece al hover -->
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 group-hover:w-full transition-all duration-300"></span>
 				</a>
 			</li>
 			<li>
-				<a href="#gallery" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+				<a href="#gallery" class="text-amber-100 hover:text-amber-200 transition duration-300 relative group">
 					Fotos
-					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 group-hover:w-full transition-all duration-300"></span>
 				</a>
 			</li>
 			<li>
-				<a href="#spotify" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+				<a href="#spotify" class="text-amber-100 hover:text-amber-200 transition duration-300 relative group">
 					Música
-					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 group-hover:w-full transition-all duration-300"></span>
 				</a>
 			</li>
 			<li>
-				<a href="#videos" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+				<a href="#videos" class="text-amber-100 hover:text-amber-200 transition duration-300 relative group">
 					Videos
-					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 group-hover:w-full transition-all duration-300"></span>
 				</a>
 			</li>
 			<li>
-				<a href="#social" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+				<a href="#social" class="text-amber-100 hover:text-amber-200 transition duration-300 relative group">
 					Redes
-					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-400 group-hover:w-full transition-all duration-300"></span>
 				</a>
 			</li>
 		</ul>
 
-		<button id="mobile-menu-btn" class="md:hidden text-emerald-400 hover:text-emerald-300 transition">
+		<!-- Botón menú hamburguesa (solo visible en móvil) -->
+		<button id="mobile-menu-btn" class="md:hidden text-amber-400 hover:text-amber-200 transition">
 			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 			</svg>
 		</button>
 	</div>
 
-	<!-- Mobile menu -->
-	<div id="mobile-menu" class="md:hidden hidden bg-black/80 backdrop-blur-xl border-b border-emerald-500/20">
+	<!-- Menú móvil (se muestra/oculta con JavaScript) -->
+	<div id="mobile-menu" class="md:hidden hidden bg-amber-950/80 backdrop-blur-xl border-b border-amber-700/30">
 		<ul class="flex flex-col gap-4 p-4">
 			<li>
-				<a href="#about" class="text-gray-300 hover:text-emerald-400 transition">Nosotros</a>
+				<a href="#about" class="text-amber-100 hover:text-amber-200 transition">Nosotros</a>
 			</li>
 			<li>
-				<a href="#gallery" class="text-gray-300 hover:text-emerald-400 transition">Fotos</a>
+				<a href="#gallery" class="text-amber-100 hover:text-amber-200 transition">Fotos</a>
 			</li>
 			<li>
-				<a href="#spotify" class="text-gray-300 hover:text-emerald-400 transition">Música</a>
+				<a href="#spotify" class="text-amber-100 hover:text-amber-200 transition">Música</a>
 			</li>
 			<li>
-				<a href="#videos" class="text-gray-300 hover:text-emerald-400 transition">Videos</a>
+				<a href="#videos" class="text-amber-100 hover:text-amber-200 transition">Videos</a>
 			</li>
 			<li>
-				<a href="#social" class="text-gray-300 hover:text-emerald-400 transition">Redes</a>
+				<a href="#social" class="text-amber-100 hover:text-amber-200 transition">Redes</a>
 			</li>
 		</ul>
 	</div>
 </nav>
 
 <script>
+	/* ===== LÓGICA DEL MENÚ MÓVIL =====
+	   Muestra/oculta el menú al hacer click en el botón hamburguesa
+	   ===== */
+
 	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 	const mobileMenu = document.getElementById('mobile-menu');
 
+	// Al hacer click en el botón, toggle (mostrar/ocultar) el menú
 	mobileMenuBtn?.addEventListener('click', () => {
 		mobileMenu?.classList.toggle('hidden');
 	});
 
-	// Cerrar menú al hacer click en un link
+	// Al hacer click en un link del menú móvil, cerrar el menú
 	document.querySelectorAll('#mobile-menu a').forEach((link) => {
 		link.addEventListener('click', () => {
 			mobileMenu?.classList.add('hidden');

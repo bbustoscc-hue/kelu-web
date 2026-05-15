@@ -1,4 +1,22 @@
 ---
+/* ===== PÁGINA PRINCIPAL (index.astro) =====
+   Esta es la página de inicio del sitio.
+   Importa todos los componentes y los renderiza en orden.
+
+   ESTRUCTURA DE LA PÁGINA:
+   1. Navigation - Menú superior (siempre visible)
+   2. Hero - Sección principal de bienvenida
+   3. About - Sección "Sobre KELU"
+   4. Gallery - Galería de fotos
+   5. Spotify - Sección de música/escucha
+   6. Videos - Sección de videos
+   7. Social - Redes sociales
+   8. Footer - Pie de página
+
+   MODIFICA: Agrega/elimina componentes aquí para cambiar la estructura
+   ===== */
+
+import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Gallery from '../components/Gallery.astro';
@@ -9,32 +27,20 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>KELU - Reggae Band</title>
-		<meta name="description" content="KELU - La mejor banda de reggae" />
-	</head>
-	<body class="bg-gradient-to-b from-slate-900 to-black text-white">
-		<Navigation />
-		<main>
-			<Hero />
-			<About />
-			<Gallery />
-			<Spotify />
-			<Videos />
-			<Social />
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<!-- Navegación principal -->
+	<Navigation />
 
-<style>
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-</style>
+	<!-- Contenido principal -->
+	<main>
+		<Hero />
+		<About />
+		<Gallery />
+		<Spotify />
+		<Videos />
+		<Social />
+	</main>
+
+	<!-- Pie de página -->
+	<Footer />
+</Layout>
