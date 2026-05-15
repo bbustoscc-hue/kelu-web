@@ -124,6 +124,16 @@
 	}
 }
 
+/* Animación de marquee (scroll horizontal) */
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
 /* Aplicar animación de flotación */
 .animate-float {
 	animation: float 3s ease-in-out infinite;
@@ -142,6 +152,18 @@
 /* Aplicar animación de desvanecimiento */
 .animate-fade-in-up {
 	animation: fade-in-up 0.8s ease-out;
+}
+
+/* Aplicar animación de marquee */
+.animate-marquee {
+	animation: marquee 15s linear infinite;
+}
+
+/* ===== SOMBRA DE TEXTO PARA MEJOR CONTRASTE =====
+   Usado para: Textos sobre fondos de imagen
+   ===== */
+.text-shadow {
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== PERSONALIZACIÓN DE SCROLLBAR =====
