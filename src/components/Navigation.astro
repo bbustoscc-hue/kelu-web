@@ -1,0 +1,85 @@
+---
+---
+
+<nav class="fixed top-0 w-full bg-black/40 backdrop-blur-xl z-50 border-b border-emerald-500/20">
+	<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+		<div class="text-2xl font-black gradient-text hover:scale-110 transition-transform">
+			KELU
+		</div>
+		<ul class="hidden md:flex gap-8 text-sm md:text-base">
+			<li>
+				<a href="#about" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+					Nosotros
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#gallery" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+					Fotos
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#spotify" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+					Música
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#videos" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+					Videos
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+				</a>
+			</li>
+			<li>
+				<a href="#social" class="text-gray-300 hover:text-emerald-400 transition duration-300 relative group">
+					Redes
+					<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+				</a>
+			</li>
+		</ul>
+
+		<button id="mobile-menu-btn" class="md:hidden text-emerald-400 hover:text-emerald-300 transition">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</div>
+
+	<!-- Mobile menu -->
+	<div id="mobile-menu" class="md:hidden hidden bg-black/80 backdrop-blur-xl border-b border-emerald-500/20">
+		<ul class="flex flex-col gap-4 p-4">
+			<li>
+				<a href="#about" class="text-gray-300 hover:text-emerald-400 transition">Nosotros</a>
+			</li>
+			<li>
+				<a href="#gallery" class="text-gray-300 hover:text-emerald-400 transition">Fotos</a>
+			</li>
+			<li>
+				<a href="#spotify" class="text-gray-300 hover:text-emerald-400 transition">Música</a>
+			</li>
+			<li>
+				<a href="#videos" class="text-gray-300 hover:text-emerald-400 transition">Videos</a>
+			</li>
+			<li>
+				<a href="#social" class="text-gray-300 hover:text-emerald-400 transition">Redes</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<script>
+	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	mobileMenuBtn?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+
+	// Cerrar menú al hacer click en un link
+	document.querySelectorAll('#mobile-menu a').forEach((link) => {
+		link.addEventListener('click', () => {
+			mobileMenu?.classList.add('hidden');
+		});
+	});
+</script>

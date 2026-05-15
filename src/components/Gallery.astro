@@ -1,0 +1,42 @@
+---
+---
+
+<section id="gallery" class="py-32 relative overflow-hidden">
+	<div class="absolute inset-0">
+		<div class="absolute top-1/4 right-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+	</div>
+
+	<div class="max-w-6xl mx-auto px-4 relative z-10">
+		<div class="text-center mb-16">
+			<h2 class="text-5xl md:text-6xl font-black mb-6 gradient-text">
+				Galería
+			</h2>
+			<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+				Momentos memorables de nuestros shows y eventos
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{[1, 2, 3, 4, 5, 6].map((i) => (
+				<div class="group relative overflow-hidden rounded-2xl aspect-square bg-gradient-to-br from-slate-800 to-slate-900 cursor-pointer card-hover">
+					<div class="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+						<span class="text-gray-500 text-lg">Foto {i}</span>
+					</div>
+
+					<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+					<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+						<div>
+							<p class="text-white font-bold text-lg">Momento memorable</p>
+							<p class="text-gray-300 text-sm">Evento especial</p>
+						</div>
+					</div>
+
+					<div class="absolute inset-0 border-2 border-emerald-500 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
+
+					<div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
